@@ -7,7 +7,8 @@ package jp.co.tg.kensyu.extend.means;
  */
 //public class TgAdventureCompleteEdition extends TgAdventure,TgAdventureDlc1,TgAdventureDlc2{
 //}
+//複数の継承は同時にできない。
 
-public class TgAdventureCompleteEdition{
+public class TgAdventureCompleteEdition extends TgAdventureDlc2{
 }
 

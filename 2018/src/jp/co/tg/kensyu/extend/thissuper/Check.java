@@ -5,7 +5,9 @@ public class Check {
 		Parent parent = new Parent();
 		Children children = new Children();
 
+		System.out.println("--- parent.show ----------------");
 		parent.show();
+		System.out.println("--- children.show --------------");
 		children.show();
 	}
 }

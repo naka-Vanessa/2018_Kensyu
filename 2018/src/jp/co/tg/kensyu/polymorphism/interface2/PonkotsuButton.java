@@ -31,17 +31,4 @@ public class PonkotsuButton {
 		int state = (int) (Math.random() * 2);
 		impl.pushed(state);
 	}
-
-	/**
-	 * ボタンが押されたときに動作するイベントリスナーです。
-	 * @author masaki
-	 *
-	 */
-	public interface PushListener{
-		/**
-		 * ボタンが押されたときに呼び出されます。
-		 * @param state 0 : OFF状態       1 : ON状態
-		 */
-		void pushed(int state);
-	}
 }

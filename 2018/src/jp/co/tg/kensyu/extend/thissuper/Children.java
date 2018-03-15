@@ -12,9 +12,12 @@ public class Children extends Parent{
 		System.out.println("私は " + this.getClass().getSimpleName());
 		System.out.println("年齢 : " + age);
 		System.out.println("特技！！  " + skill);
+
+//		System.out.println("--- superの呼び出し ------------");
+//		super.show();
 	}
 	@Override
 	public void show2() {
-		System.out.println("show2メソッドなど存在しない。");
+		System.out.println("何もしない");
 	}
 }

@@ -2,20 +2,20 @@ package jp.co.tg.kensyu.extend.cast;
 
 public class Cast {
 	public static void main(String[] args) {
-		A	a1	= new AA();
-//		AA	aa1 = new A(); これはコンパイルエラーになる。
+		SuperA	a1	= new SubB();
+//		AA	b1 = new A(); これはコンパイルエラーになる。
 
 
 
-		A	a2	= new A();
-		AA	aa2 = new AA();
+		SuperA	a2	= new SuperA();
+		SubB	b2 = new SubB();
 
-		A 	a3	= aa2;
-//		AA	aa3 = a2; これもコンパイルエラー。 a2はA型なのでダメ。
+		SuperA 	a3	= b2;
+//		SubB	b3 = a2; //これもコンパイルエラー。 a2はA型であり、スーパークラスからのサブクラスへの変換は暗黙的にできない。
 
-		A 	a4 = (A)aa2;  // a3変数の定義と同じことをやっている。
+		SuperA 	a4 = (SuperA)b2;  // a3変数の定義と同じことをやっている。
 		try {
-			AA aa4 = (AA)a2;  //コンパイルエラーにはならないが、動かすと実行時エラー(java.lang.ClassCastException)が発生する。
+			SubB b4 = (SubB)a2;  //コンパイルエラーにはならないが、動かすと実行時エラー(java.lang.ClassCastException)が発生する。
 		}catch(ClassCastException e) {
 			e.printStackTrace();
 		}
@@ -27,14 +27,16 @@ public class Cast {
 		//a3の中身は紛れもなくAAクラスのインスタンスであることが分かった。では、a3変数でAAクラスだけに書かれたメソッドを呼び出すことができるか？
 //		a3.;
 
+		SubB b5 = (SubB)a3; //正しく動作する。a3にはb2のインスタンスが入っているため。
+
 	}
 
-	public static class A{
+	public static class SuperA{
 		public void thisName(String hennsuu) {
 			System.out.println(hennsuu + " : I'm " + this.getClass().getSimpleName());
 		}
 	}
-	public static class AA extends A{
+	public static class SubB extends SuperA{
 		public void special() {
 			System.out.println("special!!");
 		}

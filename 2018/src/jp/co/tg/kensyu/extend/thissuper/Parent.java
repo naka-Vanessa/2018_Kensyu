@@ -9,7 +9,7 @@ public class Parent {
 
 	public void setSkill(String skill) {
 		skill = skill;
-		this.skill = skill;
+//		this.skill = skill;
 	}
 
 	public void show() {

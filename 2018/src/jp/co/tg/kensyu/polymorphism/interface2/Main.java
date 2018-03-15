@@ -1,6 +1,5 @@
 package jp.co.tg.kensyu.polymorphism.interface2;
 
-import jp.co.tg.kensyu.polymorphism.interface2.PonkotsuButton.PushListener;
 
 public class Main {
 	public static void main(String[] artgs) {
